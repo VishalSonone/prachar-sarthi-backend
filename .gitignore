@@ -1,0 +1,12 @@
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+*.sln.docstates
+appsettings.json
+appsettings.Development.json
+.vscode/
+.idea/
+*.swp
+*.bak
+*.tmp
