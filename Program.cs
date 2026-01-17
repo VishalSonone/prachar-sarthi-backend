@@ -60,10 +60,17 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseCors("AllowAll");
+// More robust CORS
+app.UseCors(x => x
+    .AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader());
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+// Test endpoint to verify API is up
+app.MapGet("/", () => "PracharSaarathi API is running!");
 
 app.MapControllers();
 
