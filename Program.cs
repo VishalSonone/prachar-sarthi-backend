@@ -60,17 +60,20 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// More robust CORS
+// Explicit and permissive CORS
 app.UseCors(x => x
     .AllowAnyOrigin()
     .AllowAnyMethod()
     .AllowAnyHeader());
 
+// Debug endpoints at various levels
+app.MapGet("/", () => "API is working - Root GET");
+app.MapPost("/", () => "API is working - Root POST");
+app.MapGet("/api/test", () => "API is working - /api/test GET");
+app.MapPost("/api/test", () => "API is working - /api/test POST");
+
 app.UseAuthentication();
 app.UseAuthorization();
-
-// Test endpoint to verify API is up
-app.MapGet("/", () => "PracharSaarathi API is running!");
 
 app.MapControllers();
 
