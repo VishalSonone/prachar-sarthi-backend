@@ -22,7 +22,7 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish -c Release -o ./publish
 
       - name: Azure Login
         uses: azure/login@v2
@@ -33,4 +33,4 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'prachar-sarthi-backend' # REPLACE WITH YOUR HARDCODED APP NAME
-          package: ${{env.DOTNET_ROOT}}/myapp
+          package: ./publish
