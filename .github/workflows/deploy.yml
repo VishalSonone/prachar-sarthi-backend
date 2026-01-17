@@ -32,5 +32,5 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'YOUR_BACKEND_APP_NAME' # REPLACE WITH YOUR HARDCODED APP NAME
+          app-name: 'prachar-sarthi-backend' # REPLACE WITH YOUR HARDCODED APP NAME
           package: ${{env.DOTNET_ROOT}}/myapp
